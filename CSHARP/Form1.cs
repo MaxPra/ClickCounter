@@ -16,7 +16,6 @@ namespace ClickCounter
 {
     public partial class ClickCounterView : Form
     {
-        //Problem mit der Checkbox, wegen dem fistStart und weil es das als Änderung nimmt, wenn es beim Loaden ändert
         public bool firstStart = true;
         public string path_doc = "";
         public ClickCounterView()
