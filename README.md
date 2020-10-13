@@ -7,6 +7,7 @@ It can be, that windows is blocking this program (for whatever reason), just cli
 
 **About the program**
 * If you want to uninstall it, just do it normal via the uninstaller and then make sure to delete the "ClickCounter" folder in your documents!
+* If there is any error, make sure, you have installed "Microsoft Visual C++ Redistributable"! Here is the link if not: https://support.microsoft.com/de-at/help/2977003/the-latest-supported-visual-c-downloads
 
 
 **----Important----**
