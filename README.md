@@ -1,4 +1,4 @@
-# ClickCounter Version 1.0
+# ClickCounter Version 1.4
 This application counts your clicks
 
 Download the latest installer for the program in the "Releases"-section or click [here](https://github.com/MaxPra/ClickCounter/releases/download/ClickCounterV1.4/ClickCounter_Setup.exe)
