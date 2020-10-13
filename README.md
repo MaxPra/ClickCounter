@@ -6,7 +6,7 @@ Download the latest installer for the program in the "Releases"-section or click
 It can be, that windows is blocking this program (for whatever reason), just click on "More Info" and then on "run anyway"!
 
 **About the program**
-.)If you want to uninstall it, just do it normal via the uninstaller and then make sure to delte the "ClickCounter" folder in your documents!
+* If you want to uninstall it, just do it normal via the uninstaller and then make sure to delte the "ClickCounter" folder in your documents!
 
 
 **----Important----**
