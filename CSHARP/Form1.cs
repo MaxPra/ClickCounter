@@ -8,6 +8,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -17,6 +18,7 @@ namespace ClickCounter
     {
         //Problem mit der Checkbox, wegen dem fistStart und weil es das als Änderung nimmt, wenn es beim Loaden ändert
         public bool firstStart = true;
+        public string path_doc = "";
         public ClickCounterView()
         {
             InitializeComponent();
@@ -64,6 +66,7 @@ namespace ClickCounter
 
                 string doc_path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
                 string path = doc_path + "\\ClickCounter";
+                path_doc = doc_path;
 
                 if (!System.IO.File.Exists(path + "\\settings.txt"))  //Datei settings.txt wurde noch nicht erstellt
                 {
@@ -184,6 +187,32 @@ namespace ClickCounter
                 MessageBox.Show("Something went totally wrong", "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             
+        }
+
+        private void btnResetClicks_Click(object sender, EventArgs e)
+        {
+            //First, stop the logger
+            ProcessStartInfo p = new ProcessStartInfo();
+            p.FileName = "cmd.exe";
+            p.WindowStyle = ProcessWindowStyle.Hidden;
+            p.Arguments = @"/c taskkill /F /T /IM ClickCounter_Log.exe";
+            Process.Start(p);
+            Thread.Sleep(1000);
+            lblStatus.Text = "Current status: not running...";
+
+            //Reset the clicks
+            StreamWriter sw = new StreamWriter(path_doc + "\\ClickCounter\\click_stats.txt");
+            sw.WriteLine("0");
+            sw.WriteLine("0");
+            sw.Close();
+
+            //Restart the logger
+            ProcessStartInfo ps = new ProcessStartInfo();
+            ps.FileName = "cmd.exe";
+            ps.WindowStyle = ProcessWindowStyle.Hidden;
+            ps.Arguments = @"/c ClickCounter_Log.exe";
+            Process.Start(ps);
+            lblStatus.Text = "Current status: running...";
         }
     }
 }

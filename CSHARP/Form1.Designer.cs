@@ -40,6 +40,7 @@
             this.lblStatus = new System.Windows.Forms.Label();
             this.btnRefresh = new System.Windows.Forms.Button();
             this.cbAutostart = new System.Windows.Forms.CheckBox();
+            this.btnResetClicks = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnStopLogger
@@ -166,12 +167,25 @@
             this.cbAutostart.UseVisualStyleBackColor = true;
             this.cbAutostart.CheckedChanged += new System.EventHandler(this.cbAutostart_CheckedChanged);
             // 
+            // btnResetClicks
+            // 
+            this.btnResetClicks.BackColor = System.Drawing.SystemColors.Control;
+            this.btnResetClicks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnResetClicks.Location = new System.Drawing.Point(297, 221);
+            this.btnResetClicks.Name = "btnResetClicks";
+            this.btnResetClicks.Size = new System.Drawing.Size(69, 31);
+            this.btnResetClicks.TabIndex = 12;
+            this.btnResetClicks.Text = "Reset";
+            this.btnResetClicks.UseVisualStyleBackColor = false;
+            this.btnResetClicks.Click += new System.EventHandler(this.btnResetClicks_Click);
+            // 
             // ClickCounterView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(440, 274);
+            this.Controls.Add(this.btnResetClicks);
             this.Controls.Add(this.cbAutostart);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.lblStatus);
@@ -210,6 +224,7 @@
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.CheckBox cbAutostart;
+        private System.Windows.Forms.Button btnResetClicks;
     }
 }
 
