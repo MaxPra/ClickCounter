@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClickCounterView));
             this.btnStopLogger = new System.Windows.Forms.Button();
             this.btnStartLogger = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,13 +42,17 @@
             this.btnRefresh = new System.Windows.Forms.Button();
             this.cbAutostart = new System.Windows.Forms.CheckBox();
             this.btnResetClicks = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblClose = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblMinimize = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnStopLogger
             // 
-            this.btnStopLogger.BackColor = System.Drawing.SystemColors.Control;
             this.btnStopLogger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStopLogger.Location = new System.Drawing.Point(12, 12);
+            this.btnStopLogger.Location = new System.Drawing.Point(19, 47);
             this.btnStopLogger.Name = "btnStopLogger";
             this.btnStopLogger.Size = new System.Drawing.Size(113, 42);
             this.btnStopLogger.TabIndex = 0;
@@ -59,7 +64,7 @@
             // 
             this.btnStartLogger.BackColor = System.Drawing.SystemColors.Control;
             this.btnStartLogger.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStartLogger.Location = new System.Drawing.Point(12, 76);
+            this.btnStartLogger.Location = new System.Drawing.Point(19, 111);
             this.btnStartLogger.Name = "btnStartLogger";
             this.btnStartLogger.Size = new System.Drawing.Size(113, 42);
             this.btnStartLogger.TabIndex = 1;
@@ -71,7 +76,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(131, 86);
+            this.label1.Location = new System.Drawing.Point(138, 121);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(235, 20);
             this.label1.TabIndex = 2;
@@ -81,7 +86,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(131, 22);
+            this.label2.Location = new System.Drawing.Point(138, 57);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 20);
             this.label2.TabIndex = 3;
@@ -91,17 +96,17 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 150);
+            this.label3.Location = new System.Drawing.Point(19, 185);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 20);
+            this.label3.Size = new System.Drawing.Size(108, 20);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Current Clicks:";
+            this.label3.Text = "Current clicks:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(14, 186);
+            this.label4.Location = new System.Drawing.Point(21, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 20);
             this.label4.TabIndex = 5;
@@ -111,7 +116,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 220);
+            this.label5.Location = new System.Drawing.Point(21, 255);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(41, 20);
             this.label5.TabIndex = 6;
@@ -119,7 +124,7 @@
             // 
             // tbRight
             // 
-            this.tbRight.Location = new System.Drawing.Point(72, 185);
+            this.tbRight.Location = new System.Drawing.Point(79, 220);
             this.tbRight.Name = "tbRight";
             this.tbRight.ReadOnly = true;
             this.tbRight.Size = new System.Drawing.Size(130, 20);
@@ -128,7 +133,7 @@
             // 
             // tbLeft
             // 
-            this.tbLeft.Location = new System.Drawing.Point(72, 220);
+            this.tbLeft.Location = new System.Drawing.Point(79, 255);
             this.tbLeft.Name = "tbLeft";
             this.tbLeft.ReadOnly = true;
             this.tbLeft.Size = new System.Drawing.Size(130, 20);
@@ -139,7 +144,7 @@
             // 
             this.lblStatus.AutoSize = true;
             this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatus.Location = new System.Drawing.Point(131, 125);
+            this.lblStatus.Location = new System.Drawing.Point(138, 160);
             this.lblStatus.Name = "lblStatus";
             this.lblStatus.Size = new System.Drawing.Size(242, 20);
             this.lblStatus.TabIndex = 9;
@@ -149,7 +154,7 @@
             // 
             this.btnRefresh.BackColor = System.Drawing.SystemColors.Control;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Location = new System.Drawing.Point(297, 173);
+            this.btnRefresh.Location = new System.Drawing.Point(304, 208);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.Size = new System.Drawing.Size(69, 42);
             this.btnRefresh.TabIndex = 10;
@@ -159,7 +164,7 @@
             // cbAutostart
             // 
             this.cbAutostart.AutoSize = true;
-            this.cbAutostart.Location = new System.Drawing.Point(297, 25);
+            this.cbAutostart.Location = new System.Drawing.Point(304, 60);
             this.cbAutostart.Name = "cbAutostart";
             this.cbAutostart.Size = new System.Drawing.Size(134, 17);
             this.cbAutostart.TabIndex = 11;
@@ -171,7 +176,7 @@
             // 
             this.btnResetClicks.BackColor = System.Drawing.SystemColors.Control;
             this.btnResetClicks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnResetClicks.Location = new System.Drawing.Point(297, 221);
+            this.btnResetClicks.Location = new System.Drawing.Point(304, 256);
             this.btnResetClicks.Name = "btnResetClicks";
             this.btnResetClicks.Size = new System.Drawing.Size(69, 31);
             this.btnResetClicks.TabIndex = 12;
@@ -179,12 +184,64 @@
             this.btnResetClicks.UseVisualStyleBackColor = false;
             this.btnResetClicks.Click += new System.EventHandler(this.btnResetClicks_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.SteelBlue;
+            this.panel1.Controls.Add(this.lblMinimize);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.lblClose);
+            this.panel1.Location = new System.Drawing.Point(0, -3);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(456, 38);
+            this.panel1.TabIndex = 13;
+            this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel1_MouseDown);
+            // 
+            // lblClose
+            // 
+            this.lblClose.AutoSize = true;
+            this.lblClose.Font = new System.Drawing.Font("Arial Black", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblClose.ForeColor = System.Drawing.Color.Maroon;
+            this.lblClose.Location = new System.Drawing.Point(416, 9);
+            this.lblClose.Name = "lblClose";
+            this.lblClose.Size = new System.Drawing.Size(22, 22);
+            this.lblClose.TabIndex = 0;
+            this.lblClose.Text = "X";
+            this.lblClose.Click += new System.EventHandler(this.lblClose_Click);
+            this.lblClose.DragOver += new System.Windows.Forms.DragEventHandler(this.lblClose_DragOver);
+            this.lblClose.MouseEnter += new System.EventHandler(this.lblClose_MouseEnter);
+            this.lblClose.MouseLeave += new System.EventHandler(this.lblClose_MouseLeave);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(12, 12);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(130, 20);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "ClickCounter - View";
+            // 
+            // lblMinimize
+            // 
+            this.lblMinimize.AutoSize = true;
+            this.lblMinimize.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMinimize.ForeColor = System.Drawing.Color.Maroon;
+            this.lblMinimize.Location = new System.Drawing.Point(381, -7);
+            this.lblMinimize.Name = "lblMinimize";
+            this.lblMinimize.Size = new System.Drawing.Size(38, 42);
+            this.lblMinimize.TabIndex = 2;
+            this.lblMinimize.Text = "--";
+            this.lblMinimize.Click += new System.EventHandler(this.lblMinimize_Click);
+            this.lblMinimize.MouseEnter += new System.EventHandler(this.lblMinimize_MouseEnter);
+            this.lblMinimize.MouseLeave += new System.EventHandler(this.lblMinimize_MouseLeave);
+            // 
             // ClickCounterView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(440, 274);
+            this.BackColor = System.Drawing.Color.DarkSlateBlue;
+            this.ClientSize = new System.Drawing.Size(456, 313);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnResetClicks);
             this.Controls.Add(this.cbAutostart);
             this.Controls.Add(this.btnRefresh);
@@ -198,6 +255,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnStartLogger);
             this.Controls.Add(this.btnStopLogger);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(456, 313);
             this.MinimumSize = new System.Drawing.Size(456, 313);
@@ -205,6 +264,8 @@
             this.Text = "Clickcounter View";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.ClickCounterView_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -225,6 +286,10 @@
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.CheckBox cbAutostart;
         private System.Windows.Forms.Button btnResetClicks;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label lblClose;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblMinimize;
     }
 }
 

@@ -12,12 +12,24 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
+
 namespace ClickCounter
 {
     public partial class ClickCounterView : Form
     {
+        //Problem mit der Checkbox, wegen dem fistStart und weil es das als Änderung nimmt, wenn es beim Loaden ändert
         public bool firstStart = true;
         public string path_doc = "";
+
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        public static extern bool ReleaseCapture();
+
         public ClickCounterView()
         {
             InitializeComponent();
@@ -55,6 +67,19 @@ namespace ClickCounter
 
         private void ClickCounterView_Load(object sender, EventArgs e)
         {
+            //Color things...
+            BackColor = Color.FromArgb(16, 30, 60);
+            lblClose.Text = "\u2716";
+            lblMinimize.Text = "\u23bd";
+            lblMinimize.ForeColor = Color.FromArgb(204, 0, 0);
+            panel1.BackColor = Color.FromArgb(68, 71, 78);
+            lblClose.ForeColor = Color.FromArgb(204, 0, 0);
+            ForeColor = Color.White;
+            btnRefresh.BackColor = Color.FromArgb(68, 71, 78);
+            btnStartLogger.BackColor = Color.FromArgb(68, 71, 78);
+            btnStopLogger.BackColor = Color.FromArgb(68, 71, 78);
+            btnResetClicks.BackColor = Color.FromArgb(68, 71, 78);
+
             try
             {
                 btnRefresh.Image = Image.FromFile("img/btnRefresh_icon.png");
@@ -212,6 +237,50 @@ namespace ClickCounter
             ps.Arguments = @"/c ClickCounter_Log.exe";
             Process.Start(ps);
             lblStatus.Text = "Current status: running...";
+        }
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
+        private void lblClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void lblClose_DragOver(object sender, DragEventArgs e)
+        {
+            
+        }
+
+        private void lblClose_MouseEnter(object sender, EventArgs e)
+        {
+            lblClose.ForeColor = Color.FromArgb(255, 0, 0);
+        }
+
+        private void lblClose_MouseLeave(object sender, EventArgs e)
+        {
+            lblClose.ForeColor = Color.FromArgb(204, 0, 0);
+        }
+
+        private void lblMinimize_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void lblMinimize_MouseEnter(object sender, EventArgs e)
+        {
+            lblMinimize.ForeColor = Color.FromArgb(255, 0, 0);
+        }
+
+        private void lblMinimize_MouseLeave(object sender, EventArgs e)
+        {
+            lblMinimize.ForeColor = Color.FromArgb(204, 0, 0);
         }
     }
 }
