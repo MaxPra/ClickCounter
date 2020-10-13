@@ -1,0 +1,2 @@
+C:\Users\prage\OneDrive\Dokumente\C++\ClickCounter\Debug\ClickCounter.exe
+C:\Users\prage\OneDrive\Dokumente\C++\ClickCounter\Debug\ClickCounter.pdb
